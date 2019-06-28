@@ -16,7 +16,7 @@ function drawChart () {
     var array = [];
 
     for (var i = 0; i < 20; i++) {
-      var x = Math.floor(Math.random() * 2),
+      var x = Math.floor(Math.random() * 20),
           y = Math.floor(Math.random() * 50),
           z = Math.floor(Math.random() * 25);
       array.push([x, y, z]);
@@ -40,7 +40,7 @@ function drawChart () {
     colors: ['#8e0152', '#276419'],
     pointSize: 10,
     animation: {
-      duration: 500,
+      duration: 5000,
       easing: 'linear',
       startup: true
     },
