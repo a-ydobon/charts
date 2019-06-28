@@ -27,8 +27,7 @@
       data.addColumn('number', 'Value');
       data.addRow(['V', 200]);
 
-      var chart = new google.visualization.ColumnChart(
-          document.getElementById('visualization'));
+      var chart = new google.visualization.ColumnChart(document.getElementById('visualization'));
       //var button = document.getElementById('b1');
 
       function drawChart() {
@@ -39,14 +38,14 @@
                //button.disabled = false;
        //    });
        chart.draw(data, options);
-       }
+      }
 
        //button.onclick = function() {
        //  var newValue = 1000 - data.getValue(0, 1);
        //  data.setValue(0, 1, newValue);
        //  drawChart();
        //}
-       drawChart();
+      // drawChart();
      
 
     </script>
