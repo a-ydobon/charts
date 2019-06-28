@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Continuous Animation Example</title>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      // [START script_body]
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+<title>Continuous Animation Example</title>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
 
-    function drawChart () {
+// [START script_body]
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
 
-      function genData () {
-        var array = [];
+function drawChart () {
+  
+  function genData () {
+    var array = [];
 
-        for (var i = 0; i < 20; i++) {
-          var x = Math.floor(Math.random() * 20),
-              y = Math.floor(Math.random() * 50),
-              z = Math.floor(Math.random() * 25);
-          array.push([x, y, z]);
-        }
-        return array;
-      }
+    for (var i = 0; i < 20; i++) {
+      var x = Math.floor(Math.random() * 20),
+          y = Math.floor(Math.random() * 50),
+          z = Math.floor(Math.random() * 25);
+      array.push([x, y, z]);
+    }
+    return array;
+  }
 
       var data = new google.visualization.DataTable();
       data.addColumn('number', 'X');
@@ -71,7 +72,8 @@
         chart.draw(data, options);
       }
     }
-  </script>
+
+</script>
 </head>
 <body>
   <div id="chart_div"></div>
