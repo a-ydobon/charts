@@ -6,11 +6,12 @@
       // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
       // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+      google.charts.setOnLoadCallback(examaple);
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
     
+      function example() {
        // Some raw data (not necessarily accurate)
       var rowData1 = [['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua  Guinea',
                        'Rwanda', 'Average'],
@@ -68,7 +69,7 @@
         drawChart();
       }     
 
-     
+      } 
 
     </script>
   </head>
@@ -76,6 +77,6 @@
   <body>
     <!--Div that will hold the pie chart-->
     <div id="visualization"></div>
-    <button id="b1"></button>
+    <button id="b1">button</button>
   </body>
 </html>   
