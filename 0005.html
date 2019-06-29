@@ -18,8 +18,9 @@ function animate() {
                   ['여자', 190, 18]];
   
   var data = [];
-    data[0] = google.visualization.arrayToDataTable(rowData1);
-    data[1] = google.visualization.arrayToDataTable(rowData2);
+    
+  data[0] = google.visualization.arrayToDataTable(rowData1);
+  data[1] = google.visualization.arrayToDataTable(rowData2);
 
   
   var options = {
@@ -36,19 +37,6 @@ function animate() {
   var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
   chart.draw(data[0], options);
   
-  
-  
-  var data1 = new google.visualization.DataTable();
-  data1.addColumn('string', 'Topping');
-  data1.addColumn('number', 'Slices');
-  data1.addRows([
-    ['Mushrooms', 1],
-    ['Onions', 10],
-    ['Olives', 10],
-    ['Zucchini', 1],
-    ['Pepperoni', 2],
-    ['Hello', 10]
-  ]);
   
   var options1 = {
     title: 'Year 9999',
