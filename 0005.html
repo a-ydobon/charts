@@ -29,11 +29,26 @@ function start() {
       easing: 'out',
     },
   }
-   
- 
   
   var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
   chart.draw(data, options);
+  
+  var data1 = new google.visualization.DataTable();
+  data1.addColumn('string', 'Topping');
+  data1.addColumn('number', 'Slices');
+  data1.addRows([
+    ['Mushrooms', 30],
+    ['Onions', 10],
+    ['Olives', 10],
+    ['Zucchini', 1],
+    ['Pepperoni', 2],
+    ['Hello', 10]
+  ]);
+  
+  chart.draw(data1, options);
+  
+  
+  
 }
 </script>
 </head>
