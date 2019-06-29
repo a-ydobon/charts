@@ -32,7 +32,7 @@ function animate() {
   }
   
   var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-  chart.draw(data, options);
+  chart.draw(data[0], options);
   
   
   
@@ -59,7 +59,7 @@ function animate() {
   google.visualization.events.addListener(chart, 'animationfinish', for_loop);
   
   function for_loop() {
-    chart.draw(data1, options1);
+    chart.draw(data[1], options1);
   }
   
   
