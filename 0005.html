@@ -6,21 +6,21 @@
 // Load the Visualization API and the corechart package.
 google.charts.load('current', {'packages':['corechart']});
 // Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(start);
+google.charts.setOnLoadCallback(animate);
 
-function start() {
+function animate() {
   
-  var data = new google.visualization.DataTable();
-  data.addColumn('string', 'Topping');
-  data.addColumn('number', 'Slices');
-  data.addRows([
-    ['Mushrooms', 3],
-    ['Onions', 10],
-    ['Olives', 1],
-    ['Zucchini', 1],
-    ['Pepperoni', 2],
-    ['Hello', 10]
-  ]);
+  var rawData1 = [['1990', '서울', '부산'],
+                  ['남자', 100, 200],
+                  ['여자', 90, 184]];
+  var rawData2 = [['2090', '서울', '부산'],
+                  ['남자', 110, 250],
+                  ['여자', 190, 18]];
+  
+  var data = [];
+    data[0] = google.visualization.arrayToDataTable(rowData1);
+    data[1] = google.visualization.arrayToDataTable(rowData2);
+
   
   var options = {
     title: 'Year 2000',
@@ -56,9 +56,9 @@ function start() {
     },
   }
   
-  google.visualization.events.addListener(chart, 'animationfinish', animate);
+  google.visualization.events.addListener(chart, 'animationfinish', for_loop);
   
-  function animate() {
+  function for_loop() {
     chart.draw(data1, options1);
   }
   
