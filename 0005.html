@@ -4,11 +4,11 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 // Load the Visualization API and the corechart package.
-google.charts.load('current', {'packages':['corechart'], language:'ko'});
+google.charts.load('current', {'packages':['corechart'], language:'kr'});
 // Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(animate);
+google.charts.setOnLoadCallback(animate1);
 
-function animate() {
+function animate1() {
   
   var rawData1 = [['1990', '서울', '부산'],
                   ['남자', 100, 200],
@@ -30,8 +30,8 @@ function animate() {
     animation:{
       startup: true,
       duration: 10000,
-      easing: 'linear',
-    },
+      easing: 'linear'
+    }
   }
   
   var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
@@ -44,13 +44,13 @@ function animate() {
     series: {2: {type: "line"}},
     animation:{
       duration: 5000,
-      easing: 'out',
-    },
+      easing: 'out'
+    }
   }
   
-  google.visualization.events.addListener(chart, 'animationfinish', for_loop);
+  google.visualization.events.addListener(chart, 'animationfinish', for_loop1);
   
-  function for_loop() {
+  function for_loop1() {
     chart.draw(data[1], options1);
   }
   
