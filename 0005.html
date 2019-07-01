@@ -10,22 +10,22 @@ google.charts.setOnLoadCallback(animate1);
 
 function animate1() {
   
-  
-  
   var queryString = encodeURIComponent('SELECT A, H, O, Q, R, U LIMIT 5 OFFSET 8');
-
-      var query = new google.visualization.Query(
-          'https://docs.google.com/spreadsheets/d/1FHHOH3SeU49sSSmNvO-9vB3OETcHKy0rgL0R82teOBA/edit?usp=sharing' + queryString);
+  var query = new google.visualization.Query(
+          'https://docs.google.com/spreadsheets/d/1XWJLkAwch5GXAt_7zOFDcg8Wm8Xv29_8PWuuW15qmAE/gviz/tq?sheet=Sheet1&headers=1&tq=' + queryString);
       query.send(handleSampleDataQueryResponse);
-  
-  function handleSampleDataQueryResponse(response) {
-      if (response.isError()) {
-        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        return;
-      }
+    }
 
-  var rawData1 = response.getDataTable();
-  
+  function handleSampleDataQueryResponse(response) {
+    if (response.isError()) {
+      alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+      return;
+    }
+
+  var data = response.getDataTable();
+  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+  chart.draw(data, { height: 400 });
+    
   //var rawData1 = [['1990', '서울'],
   //                ['남자', 100],
   //                ['여자', 90]];
@@ -33,42 +33,40 @@ function animate1() {
   //                ['남자', 110],
   //                ['여자', 190]];
   
-  var data = [];
+  //var data = [];
     
-  data[0] = google.visualization.arrayToDataTable(rawData1);
-  data[1] = google.visualization.arrayToDataTable(rawData2);
+  //data[0] = google.visualization.arrayToDataTable(rawData1);
+  //data[1] = google.visualization.arrayToDataTable(rawData2);
 
   
-  var options = {
-    title: 'Year 2000',
-    animation:{
-      startup: true,
-      duration: 100,
-      easing: 'linear'
-    },
-    bars: 'horizontal' // Required for Material Bar Charts.
-  }
+  //var options = {
+  //  title: 'Year 2000',
+  //  animation:{
+  //    startup: true,
+  //    duration: 100,
+  //    easing: 'linear'
+  //  },
+  //  bars: 'horizontal' // Required for Material Bar Charts.
+  //}
   
-  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-  chart.draw(data[0], options);
-  
-  
-  var options1 = {
-    title: 'Year 9999',
-    animation:{
-      duration: 500,
-      easing: 'out'
-    },
-    bars: 'horizontal' // Required for Material Bar Charts.
-  }
-  
-  google.visualization.events.addListener(chart, 'animationfinish', for_loop1);
-  
-  function for_loop1() {
-    chart.draw(data[1], options1);
-  }
+  //var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+  //chart.draw(data[0], options);
   
   
+  //var options1 = {
+  //  title: 'Year 9999',
+  //  animation:{
+  //    duration: 500,
+  //    easing: 'out'
+  //  },
+  //  bars: 'horizontal' // Required for Material Bar Charts.
+  //}
+  
+  //google.visualization.events.addListener(chart, 'animationfinish', for_loop1);
+  
+  //function for_loop1() {
+  //  chart.draw(data[1], options1);
+  //}
 }
 </script>
 </head>
