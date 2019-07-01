@@ -24,7 +24,7 @@ function animate1() {
 
   var data = response.getDataTable();
   var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-  chart.draw(data, { height: 400 });
+  chart.draw(data, { height: 400, animation{startup: true, duration: 500, easing: 'linear'} });
     
   //var rawData1 = [['1990', '서울'],
   //                ['남자', 100],
