@@ -6,28 +6,27 @@
 // Load the Visualization API and the corechart package.
 google.charts.load('current', {'packages':['corechart']});
 // Set a callback to run when the Google Visualization API is loaded.
-google.charts.setOnLoadCallback(animate1);
+google.charts.setOnLoadCallback(drawSheetName);
 
-function animate1() {
-  
+function drawSheetName() {
   var queryString = encodeURIComponent('SELECT A, H, O, Q, R, U LIMIT 5 OFFSET 8');
 
   var query = new google.visualization.Query(
-      'https://docs.google.com/spreadsheets/d/1XWJLkAwch5GXAt_7zOFDcg8Wm8Xv29_8PWuuW15qmAE/' + queryString)
+      'https://docs.google.com/spreadsheets/d/1XWJLkAwch5GXAt_7zOFDcg8Wm8Xv29_8PWuuW15qmAE/gviz/tq?sheet=Sheet1&headers=1&tq=' + queryString);
   query.send(handleSampleDataQueryResponse);
+}
 
-  function handleSampleDataQueryResponse(response) {
-    if (response.isError()) {
-      alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-      return;
-    }
+function handleSampleDataQueryResponse(response) {
+  if (response.isError()) {
+    alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+    return;
+  }
 
   var data = response.getDataTable();
-    
-  //document.write(data + '<br />');
   var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+      
   chart.draw(data, { height: 400, animation: {startup: true, duration: 500, easing: 'linear'} });
-    
+}    
   //var rawData1 = [['1990', '서울'],
   //                ['남자', 100],
   //                ['여자', 90]];
@@ -69,7 +68,7 @@ function animate1() {
   //function for_loop1() {
   //  chart.draw(data[1], options1);
   //}
-}
+
 </script>
 </head>
 
