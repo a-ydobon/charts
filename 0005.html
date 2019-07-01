@@ -10,9 +10,9 @@ google.charts.setOnLoadCallback(drawSheetName);
 
 function drawSheetName() {
   var queryString = encodeURIComponent('SELECT A, H, O, Q, R, U LIMIT 5 OFFSET 8');
-
+  var url = 'https://docs.google.com/spreadsheets/d/1TjfJCg80D6e_T21ETxLRHGrFzGcQaHJZBctVYaPlT3I';
   var query = new google.visualization.Query(
-      'https://docs.google.com/spreadsheets/d/1-Gq_ZqXpQocgDN04H0VTcAyEZBjT6RIItrakuuBlyPg/gviz/tq?sheet=1&headers=1&tq=' + queryString);
+      url + '/gviz/tq?sheet=1&headers=1&tq=' + queryString);
   query.send(handleSampleDataQueryResponse);
 }
 
