@@ -10,7 +10,7 @@ google.charts.setOnLoadCallback(animate1);
 
 function animate1() {
   
-  var queryString = encodeURIComponent('SELECT C:D');
+  var queryString = encodeURIComponent('SELECT A, H, O, Q, R, U LIMIT 5 OFFSET 8');
   var query = new google.visualization.Query(
           'https://docs.google.com/spreadsheets/d/1XWJLkAwch5GXAt_7zOFDcg8Wm8Xv29_8PWuuW15qmAE/' + queryString);
       query.send(handleSampleDataQueryResponse);
