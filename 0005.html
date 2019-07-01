@@ -12,7 +12,7 @@ function animate1() {
   
   var queryString = encodeURIComponent('SELECT E23:DC23');
   var query = new google.visualization.Query(
-          'https://docs.google.com/spreadsheets/d/1FHHOH3SeU49sSSmNvO-9vB3OETcHKy0rgL0R82teOBA/edit?usp=sharing' + queryString);
+          'https://docs.google.com/spreadsheets/d/1FHHOH3SeU49sSSmNvO-9vB3OETcHKy0rgL0R82teOBA/' + queryString);
       query.send(handleSampleDataQueryResponse);
     }
 
