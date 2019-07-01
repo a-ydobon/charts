@@ -18,6 +18,7 @@ function animate1() {
 
   function handleSampleDataQueryResponse(response) {
     if (response.isError()) {
+      document.write('error'+'<br />');
       alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
       return;
     }
