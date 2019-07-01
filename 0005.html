@@ -10,7 +10,7 @@ google.charts.setOnLoadCallback(animate1);
 
 function animate1() {
   
-  var queryString = encodeURIComponent('SELECT E22:F22, E23:F23');
+  var queryString = encodeURIComponent('SELECT E23:G25');
   var query = new google.visualization.Query(
           'https://docs.google.com/spreadsheets/d/1FHHOH3SeU49sSSmNvO-9vB3OETcHKy0rgL0R82teOBA/' + queryString);
       query.send(handleSampleDataQueryResponse);
