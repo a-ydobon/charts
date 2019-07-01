@@ -10,7 +10,7 @@ google.charts.setOnLoadCallback(animate1);
 
 function animate1() {
   
-  var queryString = encodeURIComponent('SELECT C, D LIMIT 10');
+  var queryString = encodeURIComponent('SELECT C, D LIMIT 10 OFFSET 3');
   var query = new google.visualization.Query(
           'https://docs.google.com/spreadsheets/d/1-Gq_ZqXpQocgDN04H0VTcAyEZBjT6RIItrakuuBlyPg/edit?usp=sharing' + queryString);
       query.send(handleSampleDataQueryResponse);
