@@ -12,7 +12,7 @@ function drawSheetName() {
   var queryString = encodeURIComponent('SELECT A, H, O, Q, R, U LIMIT 5 OFFSET 8');
 
   var query = new google.visualization.Query(
-      'https://docs.google.com/spreadsheets/d/1-Gq_ZqXpQocgDN04H0VTcAyEZBjT6RIItrakuuBlyPg/edit#gid=1272523082' + queryString);
+      'https://docs.google.com/spreadsheets/d/1-Gq_ZqXpQocgDN04H0VTcAyEZBjT6RIItrakuuBlyPg//gviz/tq?sheet=1&headers=1&tq=' + queryString);
   query.send(handleSampleDataQueryResponse);
 }
 
