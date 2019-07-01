@@ -24,8 +24,7 @@ function handleSampleDataQueryResponse(response) {
 
   var data = response.getDataTable();
   
-  
-  document.write(data + '<br />');
+  alert(data);
   
   
   var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
