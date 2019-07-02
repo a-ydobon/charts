@@ -10,7 +10,7 @@ google.charts.setOnLoadCallback(drawSheetName);
 
 function drawSheetName() {
   
-  for (x of 'DBC') {
+  for (x of 'BCD') {
     var queryString = encodeURIComponent('select A, ' + x);
     var url = 'https://docs.google.com/spreadsheets/d/1TjfJCg80D6e_T21ETxLRHGrFzGcQaHJZBctVYaPlT3I';
     var query = new google.visualization.Query(
@@ -32,15 +32,17 @@ function handleSampleDataQueryResponse(response) {
   //alert(show);
   
   
-  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-     
   if (show == 'B') {
+      
+    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+     
+  
     google.visualization.events.addListener(chart, 'animationfinish'); 
     chart.draw(data, { height: 400, animation: {startup: true, duration: 5000, easing: 'linear'} });
     
   }
     
-  google.visualization.events.addListener(chart, 'animationfinish', update_chart); 
+  google.visualization.events.addListener(chart, 'animationfinish'); 
   chart.draw(data, { height: 400, animation: {duration: 5000, easing: 'linear'} });
   
 }    
