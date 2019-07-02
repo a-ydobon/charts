@@ -40,16 +40,13 @@ function handleSampleDataQueryResponse(response) {
     google.visualization.events.addListener(chart, 'animationfinish'); 
     chart.draw(data, { height: 400, animation: {startup: true, duration: 5000, easing: 'linear'} });
     
+  } else {
+    google.visualization.events.addListener(chart, 'animationfinish'); 
+    chart.draw(data, { height: 400, animation: {duration: 5000, easing: 'linear'} });
   }
-    
-  google.visualization.events.addListener(chart, 'animationfinish'); 
-  chart.draw(data, { height: 400, animation: {duration: 5000, easing: 'linear'} });
-  
 }    
   
-function update_chart() {
-  chart.draw(data, { height: 400, animation: {duration: 5000, easing: 'linear'} });
-}
+
   
   
   //var rawData1 = [['1990', '서울'],
