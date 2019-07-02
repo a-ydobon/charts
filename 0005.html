@@ -23,7 +23,7 @@ function handleSampleDataQueryResponse(response) {
   }
 
   var data = response.getDataTable();
-  var show = data.getColumnId(0);
+  var show = data.getValue(50, 10);
   
   alert(show);
   
