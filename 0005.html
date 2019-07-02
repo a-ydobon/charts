@@ -10,7 +10,7 @@ google.charts.setOnLoadCallback(drawSheetName);
 
 function drawSheetName() {
   
-  for (x of 'DCB') {
+  for (x of 'DBC') {
     var queryString = encodeURIComponent('select A, ' + x);
     var url = 'https://docs.google.com/spreadsheets/d/1TjfJCg80D6e_T21ETxLRHGrFzGcQaHJZBctVYaPlT3I';
     var query = new google.visualization.Query(
