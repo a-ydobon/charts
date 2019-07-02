@@ -20,7 +20,7 @@ function drawSheetName() {
   }
 }
 
-  function handleSampleDataQueryResponse(response) {
+function handleSampleDataQueryResponse(response) {
   if (response.isError()) {
     alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;
@@ -38,8 +38,15 @@ function drawSheetName() {
     chart.draw(data, { height: 400, animation: {startup: true, duration: 5000, easing: 'linear'} });
   }
     
-  chart.draw(data, { height: 400, animation: {duration: 5000, easing: 'linear'} });
+  google.visualization.events.addListener(chart, 'animationfinish', update_chart);  
+  
 }    
+  
+function update_chart() {
+  chart.draw(data, { height: 400, animation: {duration: 5000, easing: 'linear'} });
+}
+  
+  
   //var rawData1 = [['1990', '서울'],
   //                ['남자', 100],
   //                ['여자', 90]];
