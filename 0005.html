@@ -36,9 +36,10 @@ function handleSampleDataQueryResponse(response) {
      
   if (show == 'B') {
     chart.draw(data, { height: 400, animation: {startup: true, duration: 5000, easing: 'linear'} });
+    google.visualization.events.addListener(chart, 'animationfinish', update_chart); 
   }
     
-  google.visualization.events.addListener(chart, 'animationfinish', update_chart);  
+  google.visualization.events.addListener(chart, 'ready', update_chart); 
   
 }    
   
