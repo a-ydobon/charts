@@ -9,7 +9,7 @@ google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawSheetName);
 
 function drawSheetName() {
-  var queryString = encodeURIComponent('select C, E);
+  var queryString = encodeURIComponent('select C:E');
   var url = 'https://docs.google.com/spreadsheets/d/1TjfJCg80D6e_T21ETxLRHGrFzGcQaHJZBctVYaPlT3I';
   var query = new google.visualization.Query(
       url + '/gviz/tq?sheet=1&headers=1&tq=' + queryString);
