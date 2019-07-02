@@ -10,7 +10,6 @@ google.charts.setOnLoadCallback(drawSheetName);
 
 function drawSheetName() {
   
-  var current = 0;
   for (x of 'BCD') {
     var queryString = encodeURIComponent('select A, ' + x);
     var url = 'https://docs.google.com/spreadsheets/d/1TjfJCg80D6e_T21ETxLRHGrFzGcQaHJZBctVYaPlT3I';
@@ -18,7 +17,6 @@ function drawSheetName() {
         url + '/gviz/tq?sheet=1&headers=1&tq=' + queryString);
     
     query.send(handleSampleDataQueryResponse);
-    current += 1;
   }
 }
 
@@ -29,7 +27,7 @@ function drawSheetName() {
   }
 
   var data = response.getDataTable();
-  var show = data.getValue(50, 1);
+  var show = data.getColumnId(1);
   
   alert(show);
   
