@@ -40,7 +40,8 @@ function handleSampleDataQueryResponse(response) {
     
   }
     
-  google.visualization.events.addListener(chart, 'ready', update_chart); 
+  google.visualization.events.addListener(chart, 'animationfinish', update_chart); 
+  chart.draw(data, { height: 400, animation: {duration: 5000, easing: 'linear'} });
   
 }    
   
