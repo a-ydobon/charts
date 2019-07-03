@@ -10,7 +10,7 @@ google.charts.setOnLoadCallback(drawSheetName);
 
 function drawSheetName() {
   
-  var queryString = encodeURIComponent('select A, B');
+  var queryString = encodeURIComponent('select A, B, C');
   var url = 'https://docs.google.com/spreadsheets/d/1TjfJCg80D6e_T21ETxLRHGrFzGcQaHJZBctVYaPlT3I';
   var query = new google.visualization.Query(
       url + '/gviz/tq?sheet=1&headers=1&tq=' + queryString);
@@ -24,6 +24,15 @@ function handleSampleDataQueryResponse(response) {
     alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
     return;
   }
+  
+  var data = response.getDataTable();
+  var view = new google.visualization.DataView(data);
+  
+  view.setColumns([0, 1]);
+  
+  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+  chart.draw(view, { height: 400 });
+  
 }
   
 </script>
