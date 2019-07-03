@@ -28,7 +28,7 @@ function handleSampleDataQueryResponse(response) {
   var data = response.getDataTable();
   var view = new google.visualization.DataView(data);
   
-  view.setColumns([1,2]);
+  view.setColumns([0,2]);
   
   var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
   google.visualization.events.addListener(chart, 'animationfinish');
