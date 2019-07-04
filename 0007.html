@@ -38,7 +38,7 @@ function handleSampleDataQueryResponse(response) {
   for (var i = 2; i <= 4; i++) {
     view = new google.visualization.DataView(data);
     view.setColumns([0,i]);
-    dt = view.toDataTable();
+    dt = new view.toDataTable();
     chart.draw(dt, {animation:{startup: true, duration: 1000, easing: 'linear'}});
   };
   
