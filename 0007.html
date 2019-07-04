@@ -27,6 +27,15 @@ function handleSampleDataQueryResponse(response) {
   
   var data = response.getDataTable();
   var view = new google.visualization.DataView(data);
+    view.setColumns([0, {
+      type: 'string',
+      label: data.getColumnLabel(1),
+      calc: function () {return 0;}
+    }, {
+        type: 'number',
+        label: data.getColumnLabel(2),
+        calc: function () {return 0;}
+    }]);
   
   var dt = new google.visualization.DataTable(view.setColumns([0,2]));
   
