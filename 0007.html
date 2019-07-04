@@ -29,9 +29,9 @@ function handleSampleDataQueryResponse(response) {
   var view = new google.visualization.DataView(data);
 
   var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-  //google.visualization.events.addListener(chart, 'animationfinish');
+  google.visualization.events.addListener(chart, 'animationfinish');
   
-  for (var i = 1: i <= 1; i++) {
+  for (var i = 1; i <= 2; i++) {
     view.setColumns([0,i]);
     dt = view.toDataTable();
     chart.draw(dt, {animation:{duration: 1000, easing: 'linear'}});
