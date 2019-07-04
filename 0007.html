@@ -27,12 +27,14 @@ function handleSampleDataQueryResponse(response) {
   
   var data = response.getDataTable();
   var view = new google.visualization.DataView(data);
-  view.setColumns(0,1);
+  view.setColumns([0,2]);
+  
+  dt = view.toDataTable();
   
   
   var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
   //google.visualization.events.addListener(chart, 'animationfinish');
-  chart.draw(view, {animation:{startup: true, duration: 1000, easing: 'linear'}});
+  chart.draw(dt, {animation:{startup: true, duration: 1000, easing: 'linear'}});
   //chart.draw(data);
 }
   
