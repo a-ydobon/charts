@@ -45,7 +45,7 @@ function handleSampleDataQueryResponse(response) {
    }
 
       var data = new google.visualization.DataTable();
-      data.addColumn('number', 'X');
+      data.addColumn('string', 'X');
       data.addColumn('number', 'Y');
       
 
@@ -85,7 +85,7 @@ function handleSampleDataQueryResponse(response) {
   
       function animate() {
         data = new google.visualization.DataTable();
-        data.addColumn('number', 'X');
+        data.addColumn('string', 'X');
         data.addColumn('number', 'Y');
         
         data.addRows(genData());
