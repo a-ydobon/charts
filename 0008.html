@@ -1,0 +1,69 @@
+
+google.charts.load('43', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart(category) {
+  drawChartColumn();
+}
+
+function drawChartColumn(category) {
+
+  var dataInvestment = google.visualization.arrayToDataTable([
+    ['Jaar', 'Nummer1', 'Nummer2'],
+    ['2015', 238000000, 9400000000],
+    ['2016', 275000000, 9700000000],
+    ['2017', 339000000, 9900000000],
+    ['2018', 369000000, 10100000000],
+    ['wat', 3690000, 101000000],
+  ]);
+
+
+var optionsInvestment = {
+          isStacked: true,
+        animation: {
+           //startup:true,
+           duration: 2000,
+           easing: 'out',
+        },
+        hAxis: {viewWindow: {min:0, max:5}}
+    };
+
+  var chartInvestment = new google.visualization.ColumnChart(document.getElementById('columnchart'));
+  var viewInvestment = new google.visualization.DataView(dataInvestment);
+  var viewColumnsInvestment = [0];
+viewColumnsInvestment.push(1);
+
+     // switch (category) {
+     //    case 'lumpsum':
+     //      viewColumnsInvestment.push(1);
+     //      viewColumnsInvestment.push(2);
+     //        chartInvestment.draw(viewInvestment, optionsInvestment);
+     //      break;
+
+     //    default:
+          
+     //  }
+
+   // viewColumnsInvestment.push(2);
+  viewInvestment.setColumns(viewColumnsInvestment);
+  chartInvestment.draw(viewInvestment, optionsInvestment);
+
+
+  if(category == 'zoom'){
+    optionsInvestment.hAxis.viewWindow.min = 4;
+    optionsInvestment.hAxis.viewWindow.max = 5;
+    //optionsInvestment.startup = false;
+    chartInvestment.draw(viewInvestment, optionsInvestment);
+  }
+
+  if(category == 'column1'){
+      var viewInvestment2 = new google.visualization.DataView(dataInvestment);
+      var viewColumnsInvestment2 = [0];
+    viewColumnsInvestment2.push(1);
+    viewColumnsInvestment2.push(2);
+
+
+    //optionsInvestment.startup = false;
+    chartInvestment.draw(viewInvestment2, optionsInvestment);
+  }
+}
