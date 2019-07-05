@@ -34,13 +34,13 @@ function handleSampleDataQueryResponse(response) {
   function genData () {
         var array = [];
 
-        for (var i = 0; i < 99; i++) {
-          var x = dt.getValue(i, 0),
-              y = dt.getValue(i, 1);
+        for (var i = 0; i < 21; i++) {
+          var x = dt.getValue(i, 3),
+              y = dt.getValue(i, 4);
          
           array.push([x, y]);
         }
-      dt.removeColumn(1);
+      dt.removeColumn(4);
         return array;
    }
 
